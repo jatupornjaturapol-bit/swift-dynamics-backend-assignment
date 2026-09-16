@@ -1,0 +1,1007 @@
+{
+  "info": {
+    "_postman_id": "f1d64666-3c95-4a73-9c63-c48fa1fea58b",
+    "name": "School API - Django REST Framework",
+    "description": "CRUD and Filter API for School, Classroom, Teacher and Student",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29929314"
+  },
+  "item": [
+    {
+      "name": "School",
+      "item": [
+        {
+          "name": "Create School",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bangkok School\",\n  \"abbreviation\": \"BKS\",\n  \"address\": \"Bangkok\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/schools/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "schools",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Schools",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/schools/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "schools",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "School Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/schools/{{school_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "schools",
+                "{{school_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter School By Name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/schools/?name=Bangkok School",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "schools",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Bangkok School"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update School",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bangkok International School\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/schools/{{school_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "schools",
+                "{{school_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete School",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/schools/{{school_id}}/?",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "schools",
+                "{{school_id}}",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Classroom",
+      "item": [
+        {
+          "name": "Create Classroom",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"school\": 1,\n  \"grade\": 6,\n  \"room\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/classrooms/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "classrooms",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Classrooms",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/classrooms/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "classrooms",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Classroom Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/classrooms/{{classroom_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "classrooms",
+                "{{classroom_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Classroom By School",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/classrooms/?school={{school_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "classrooms",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "school",
+                  "value": "{{school_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Classroom",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"room\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/classrooms/{{classroom_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "classrooms",
+                "{{classroom_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Classroom",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/classrooms/{{classroom_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "classrooms",
+                "{{classroom_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Teacher",
+      "item": [
+        {
+          "name": "Create Teacher",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Somchai\",\n  \"last_name\": \"Dee\",\n  \"gender\": \"male\",\n  \"classrooms\": [1]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Teachers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Teacher Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/{{teacher_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                "{{teacher_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Teacher By School",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/?school={{school_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "school",
+                  "value": "{{school_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Teacher By Classroom",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/?classroom={{classroom_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "classroom",
+                  "value": "{{classroom_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Teacher By First Name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/?first_name=Somchai",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "first_name",
+                  "value": "Somchai"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Teacher By Last Name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/?last_name=Dee",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "last_name",
+                  "value": "Dee"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Teacher By Gender",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/?gender=male",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "gender",
+                  "value": "male"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Teacher",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Somchai Updated\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/{{teacher_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                "{{teacher_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Teacher",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/teachers/{{teacher_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "teachers",
+                "{{teacher_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Student",
+      "item": [
+        {
+          "name": "Create Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Jatuporn\",\n  \"last_name\": \"Jaturapol\",\n  \"gender\": \"male\",\n  \"classroom\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/students/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Students",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Student Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/{{student_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                "{{student_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Student By School",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/?school={{school_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "school",
+                  "value": "{{school_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Student By Classroom",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/?classroom={{classroom_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "classroom",
+                  "value": "{{classroom_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Student By First Name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/?first_name=Jatuporn",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "first_name",
+                  "value": "Jatuporn"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Student By Last Name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/?last_name=Jaturapol",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "last_name",
+                  "value": "Jaturapol"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Student By Gender",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/?gender=male",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "gender",
+                  "value": "male"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Student",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Jatuporn Updated\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/students/{{student_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                "{{student_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Student",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/students/{{student_id}}/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "students",
+                "{{student_id}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "school_id",
+      "value": "1"
+    },
+    {
+      "key": "classroom_id",
+      "value": "1"
+    },
+    {
+      "key": "teacher_id",
+      "value": "1"
+    },
+    {
+      "key": "student_id",
+      "value": "1"
+    }
+  ]
+}
